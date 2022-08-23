@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
   <head>
     <title>Device Orientacion</title>
@@ -6,22 +5,30 @@
   </head>
   <body>
     <head>
-
-
-      <link rel="icon" href="#">
-      <!--
-          <link rel="icon" href="/public/images/icons/favicon-18x8.png">
-          <link rel="icon" type="image/png"
-                href="/public/images/icons/pwa-icon-192.png"
-                sizes="192x192">
-          -->
-      
-      <link rel="manifest" href="/manifest.json">
+      <link rel="icon" href="web/icon/app-icon-192x192.png">    
     </head>
   <body>
+    
+    <script>
 
-    <h1>This is a Heading</h1>
-    <p>This is a paragraph.</p>
+      window.addEventListener("deviceorientation", handleOrientation, true);
+
+      function handleOrientation(event) {
+          var absolute = event.absolute;
+          var alpha    = event.alpha;
+          var beta     = event.beta;
+          var gamma    = event.gamma;
+
+          alert("absolute =   "+absolute);
+          alert("alpha = "+alpha);
+          alert("beta = "+beta);
+          alert("gamma = "+gamma);
+          // Do stuff with the new orientation data
+      }  
+    </script>
+    
+    <h1>Device Orientation Detect</h1>
+    <p>Movimento o celular pra detectar a sua orientacao..</p>
     
   </body>
 </html> 
